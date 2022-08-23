@@ -31,7 +31,8 @@ class LottiePlayerWeb {
       default:
         throw PlatformException(
           code: 'Unimplemented',
-          details: 'lottie_player for web doesn\'t implement \'${call.method}\'',
+          details:
+              'lottie_player for web doesn\'t implement \'${call.method}\'',
         );
     }
   }

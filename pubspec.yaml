@@ -1,6 +1,6 @@
 name: lottie_player
 description: This is use to lottie json player. This plugin is supported Android iOS and web platform
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/team7s/lottie_player
 
 environment:
