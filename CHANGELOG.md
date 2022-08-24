@@ -1,3 +1,7 @@
+## 0.0.5
+
+* Add scrollbar-auto
+
 ## 0.0.4
 
 * Code format

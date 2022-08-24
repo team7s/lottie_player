@@ -23,8 +23,7 @@ class _MyAppState extends State<MyApp> {
         ),
         body: const Center(
           child: LottiePlayer(
-            networkUrl:
-                'https://assets5.lottiefiles.com/packages/lf20_i9mtrven.json',
+            networkUrl: 'https://assets5.lottiefiles.com/packages/lf20_i9mtrven.json',
             width: 200,
             height: 200,
           ),

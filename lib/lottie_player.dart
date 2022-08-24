@@ -27,7 +27,7 @@ class LottiePlayer extends StatelessWidget {
     double mHeight = MediaQuery.of(context).size.width;
     return WebViewX(
       initialContent:
-          '<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> <lottie-player mode="normal" src="$networkUrl"  background="transparent"  speed="1"  style="width: ${width ?? mWidth}px; height: ${height ?? mHeight}px;"  loop autoplay></lottie-player>',
+          '<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> <lottie-player style=".scrollbar-auto{scrollbar-color:auto;overflow-y:scroll;}" mode="normal" src="$networkUrl"  background="transparent"  speed="1"  style="width: ${width ?? mWidth}px; height: ${height ?? mHeight}px;"  loop autoplay></lottie-player>',
       initialSourceType: SourceType.html,
       width: width ?? mWidth,
       height: height ?? mHeight,
