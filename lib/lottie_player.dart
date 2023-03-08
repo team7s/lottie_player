@@ -26,6 +26,9 @@ class LottiePlayer extends StatelessWidget {
   /// * [bool] Creates a controls for image
   final bool? controls;
 
+  /// * [bool] Creates a ignoreAllGestures for image
+  final bool ignoreAllGestures;
+
   const LottiePlayer({
     Key? key,
     required this.networkUrl,
@@ -35,6 +38,7 @@ class LottiePlayer extends StatelessWidget {
     this.loop = true,
     this.hover = true,
     this.controls = true,
+    this.ignoreAllGestures = true,
   }) : super(key: key);
 
   @override
@@ -42,8 +46,17 @@ class LottiePlayer extends StatelessWidget {
     double mWidth = MediaQuery.of(context).size.width;
     double mHeight = MediaQuery.of(context).size.width;
     return WebViewX(
-      initialContent:
-          '<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> <lottie-player style=".scrollbar-auto{scrollbar-color:auto;overflow-y:scroll;}" mode="normal" src="$networkUrl"  background="transparent"  speed="1"  style="width: ${width ?? mWidth}px; height: ${height ?? mHeight}px;" ${hover == false ? '' : 'hover'} ${loop == false ? '' : 'loop'} ${controls == false ? '' : 'controls'} ${autoPlay == false ? '' : 'autoplay'}></lottie-player>',
+      ignoreAllGestures: ignoreAllGestures,
+      initialContent: ''''
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"> 
+  const element = document.getElementById('lottie');
+  element.style.overflow = 'hidden';
+</script> 
+<div id="lottie">
+<lottie-player style=".scrollbar-auto{scrollbar-color:auto;overflow-y:scroll;}" mode="normal" src="$networkUrl"  background="transparent"  speed="1"  style="width: ${width ?? mWidth}px; height: ${height ?? mHeight}px;" ${hover == false ? '' : 'hover'} ${loop == false ? '' : 'loop'} ${controls == false ? '' : 'controls'} ${autoPlay == false ? '' : 'autoplay'}>
+</lottie-player> 
+</div>
+''',
       initialSourceType: SourceType.html,
       width: width ?? mWidth,
       height: height ?? mHeight,
